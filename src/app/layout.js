@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import NextThemeProvider from "@/provider/NextThemeProvider";
 import Footer from "@/Components/Footer";
+import TrendingIdeas from "./trending_ideas/page";
 
 
 
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
          <Navbar></Navbar>
          <main>
           {children}
+          <TrendingIdeas></TrendingIdeas>
          </main>
          <Footer></Footer>
        </NextThemeProvider>
