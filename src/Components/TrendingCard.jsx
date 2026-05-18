@@ -10,6 +10,7 @@ const TrendingCard = ({trending}) => {
       <div className="relative h-[140px] w-full shrink-0 overflow-hidden rounded-2xl sm:h-[120px] sm:w-[120px]">
        <Image src={imageUrl} alt="image" width={120} height={110}></Image>
       </div>
+      
       <div className="flex flex-1 flex-col gap-3">
         <Card.Header className="gap-1">
           <Card.Title className="pr-8">{title}!</Card.Title>

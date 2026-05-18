@@ -16,7 +16,7 @@ const TrendingIdeas =async () => {
     console.log("trending data",trendingData)
 
     return (
-        <div className='w-11/12 mx-auto py-5 xl:[60h]'>
+        <div className='w-11/12 mx-auto py-5 lg:[70h]'>
 
             <div className='grid grid-cols-1  lg:grid-cols-3 gap-3'>
                 {
