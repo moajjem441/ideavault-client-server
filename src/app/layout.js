@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
          <Navbar></Navbar>
          <main>
           {children}
-          <TrendingIdeas></TrendingIdeas>
+         
          </main>
          <Footer></Footer>
        </NextThemeProvider>
