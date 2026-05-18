@@ -1,8 +1,9 @@
 @import "tailwindcss";
-@import "@heroui/styles"; 
+@import "@heroui/styles";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* Override any color variable */
   --accent: oklch(0.7 0.25 260);
   --success: oklch(0.65 0.15 155);
 }
