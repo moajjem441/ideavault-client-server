@@ -1,11 +1,11 @@
-import { Button, Card, CloseButton } from "@heroui/react";
+import { Button, Card,  } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 
 const TrendingCard = ({ trending }) => {
     const { _id, title, shortDescription, category, imageUrl } = trending;
     return (
-        <div>
+        <div className="m-2">
 
             <Card className="w-full items-stretch md:flex-row p-3 ">
                 <div className="relative h-[140px] w-full shrink-0 overflow-hidden rounded-2xl sm:h-[120px] sm:w-[120px]">
@@ -18,7 +18,7 @@ const TrendingCard = ({ trending }) => {
                         <Card.Description className="text-[1rem] p-2">
                             {shortDescription}
                         </Card.Description>
-                        <CloseButton aria-label="Close banner" className="absolute top-3 right-3" />
+                        {/* <CloseButton aria-label=" banner" className="absolute top-3 right-3" /> */}
                     </Card.Header>
                     <Card.Footer className="mt-auto flex w-full flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
                         <div className="flex flex-col">
