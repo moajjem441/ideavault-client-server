@@ -16,11 +16,11 @@ const TrendingIdeas =async () => {
     console.log("trending data",trendingData)
 
     return (
-        <div className='h-[40vh]'>
+        <div className='w-11/12 mx-auto py-5 xl:[60h]'>
             <h1>Trending Ideas</h1>
             <h1>Total : {trendingData.length}</h1>
 
-            <div>
+            <div className='grid grid-cols-1  lg:grid-cols-3 gap-3'>
                 {
                     trendingData.map(trending=><TrendingCard key={trending._id} trending={trending} ></TrendingCard>)
                 }

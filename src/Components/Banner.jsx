@@ -34,7 +34,7 @@ export default function Banner() {
   ];
 
   return (
-    <div className="w-full h-[70vh] min-h-[450px]">
+    <div className="w-full h-[60vh] min-h-[450px]">
       <Swiper
         spaceBetween={0}
         centeredSlides={true}
