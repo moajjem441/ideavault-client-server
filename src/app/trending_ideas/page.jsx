@@ -17,8 +17,6 @@ const TrendingIdeas =async () => {
 
     return (
         <div className='w-11/12 mx-auto py-5 xl:[60h]'>
-            <h1>Trending Ideas</h1>
-            <h1>Total : {trendingData.length}</h1>
 
             <div className='grid grid-cols-1  lg:grid-cols-3 gap-3'>
                 {
