@@ -18,7 +18,7 @@ const TrendingIdeas =async () => {
 
     return (
         <div className='w-11/12 mx-auto py-5 '>
-            <Marquee speed={200}>
+            <Marquee speed={120}>
   <h1 className="text-3xl lg:text-5xl font-extrabold p-5 my-7 text-cyan-400 italic tracking-tight drop-shadow-[0_2px_8px_rgba(34,211,238,0.3)]">
   Trending Ideas
 </h1>
