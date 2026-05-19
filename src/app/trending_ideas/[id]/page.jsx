@@ -35,6 +35,11 @@ import Link from "next/link";
 import { FaArrowLeft, FaCalendarAlt, FaEnvelope, FaWallet, FaRocket } from 'react-icons/fa';
 
 
+export const metadata = {
+  title: 'Trending-Details', 
+  description: '', 
+}
+
 const TrendingDetails = async ({ params }) => {
     const { id } = await params;
 
