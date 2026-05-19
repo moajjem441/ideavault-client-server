@@ -6,6 +6,7 @@ import { authClient } from '@/lib/auth-client';
 import { Avatar, Button } from '@heroui/react';
 
 
+
 const Navbar = () => {
 
  const { data: session } = authClient.useSession();
@@ -64,10 +65,18 @@ const user = session?.user;
                   {
                     user ? 
                     <>
-                      <li> <Avatar>
+                      <li> <Link href={'/profile'}>
+                     
+                        <Avatar>
                                 <Avatar.Image referrerPolicy='no-referrer' alt="John Doe" src={user.image} />
                                 <Avatar.Fallback>{user.name}</Avatar.Fallback>
-                            </Avatar></li>
+                            </Avatar>
+                     
+                      </Link></li>
+
+
+                       
+
 
                             <li className='text-lg font-bold'><Link href="/login"><Button onClick={handleLogOutButton} variant='danger'>Log out</Button></Link></li>
 

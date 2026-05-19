@@ -46,6 +46,13 @@ const RegisterPage = () => {
 
     }
 
+    const handleGoogleSignIn= async()=>{
+        await authClient.signIn.social({
+            provider:"google",
+            callbackURL: "/"
+        });
+    };
+
 
 
     return (
@@ -144,7 +151,7 @@ const RegisterPage = () => {
 
                         {/* onClick={handleGoogleSignIn} */}
                         <div className=" w-full p-2 flex justify-center items-center gap-2 border-2 border-gray-100">
-                            <Button className="w-full" variant="bordered" >  <FcGoogle /> <p>Sign Up with Google</p></Button>
+                            <Button onClick={handleGoogleSignIn} className="w-full" variant="bordered" >  <FcGoogle /> <p>Sign Up with Google</p></Button>
                         </div>
 
                         <div className="flex gap-2">
