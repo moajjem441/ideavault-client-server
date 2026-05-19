@@ -7,6 +7,7 @@ const IdeasCard = ({idea}) => {
     const { _id, title, shortDescription, category, imageUrl } = idea;
 
     return (
+        
          <div className="m-2">
         
                     <Card className="w-full items-stretch md:flex-row p-3 ">
