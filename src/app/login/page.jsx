@@ -82,7 +82,7 @@ const LogInPage = () => {
                         <div className="flex justify-center items-center my-3">
                             <Separator />
                             <div className="whitespace-nowrap">
-                                Or 
+                             <Link href={'/register'}> <span className='text-cyan-600 p-3 font-bold'>forget password</span></Link>
                             </div>
                             <Separator />
                         </div>
