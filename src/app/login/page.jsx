@@ -1,7 +1,6 @@
 'use client'
 import { authClient } from '@/lib/auth-client';
 import { Button, Card, Form, Input, Label, Separator, TextField } from '@heroui/react';
-import { createAuthClient } from 'better-auth/react';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import React from 'react';
@@ -11,46 +10,30 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { IoPersonOutline } from 'react-icons/io5';
 import { RiImageLine, RiLockPasswordLine } from 'react-icons/ri';
 
+const LogInPage = () => {
 
-const RegisterPage = () => {
- 
-    const onSubmit = async(e)=>{
-        e.preventDefault();
-
+    const onSubmit =async(e)=>{
+        e.preventDefault()
         const formData = new FormData(e.currentTarget);
-        const userData = Object.fromEntries(formData.entries());
-        console.log(userData)
+        const user =Object.fromEntries(formData.entries());
 
-        if(!userData){
-            toast.error("No Data come")
-
-        }
-
-        const {data,error}=await authClient.signUp.email({
-            email:userData?.email,
-            password:userData?.password,
-            name:userData?.name,
-            image:userData?.photoUrl,
-
-        })
-
-        console.log({data,error})
+        const {data,error}= await authClient.signIn.email({
+            email:user.email,
+            password:user.password
+        });
 
         if(data){
-            toast.success("Perfectly Created Account")
+            toast.success("Log In Successfully");
             redirect('/')
         }
         if(error){
-            toast.error("Something wrong")
+            toast.error("Failed to Log in .Please try again!!");
         }
-
     }
-
-
 
     return (
         <div className='my-15'>
-            <h1 className="text-center text-3xl">Create Account</h1>
+            <h1 className="text-center text-3xl">Log In your Account</h1>
             <p className="text-center text-gray-500">Start your adventure with IdeaVault</p>
             <Card className="w-full max-w-xl mx-auto">
 
@@ -64,26 +47,6 @@ const RegisterPage = () => {
                     <Card.Content>
                         <div className="flex flex-col gap-4">
 
-                            <TextField name="name" type="text">
-                                <Label>Full Name</Label>
-
-                                <div className="relative w-full">
-
-                                    <IoPersonOutline
-                                        className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
-                                    />
-
-                                    <Input
-                                        type="text"
-                                        placeholder="Enter Your Name"
-                                        className="w-full pl-10"
-                                        variant="secondary"
-                                        required
-                                    />
-
-                                </div>
-
-                            </TextField>
 
                             <TextField name="email" type="email">
                                 <Label>Email</Label>
@@ -95,22 +58,6 @@ const RegisterPage = () => {
 
                             </TextField>
 
-                            <TextField name="photoUrl" type="url">
-                                <Label>Photo URL</Label>
-
-                                <div className="relative w-full">
-                                    
-                                    <RiImageLine className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
-
-                                   
-                                    <Input
-                                        className="w-full pl-10"
-                                        placeholder="https://example.com/your-photo.jpg"
-                                        variant="secondary"
-                                        required
-                                    />
-                                </div>
-                            </TextField>
 
                             <TextField name="password" type="password">
                                 <Label>Password</Label>
@@ -129,13 +76,13 @@ const RegisterPage = () => {
                     </Card.Content>
                     <Card.Footer className="mt-4 flex flex-col gap-2">
                         <Button className="w-full" type="submit">
-                            Create Account
+                           Log in
                         </Button>
 
                         <div className="flex justify-center items-center my-3">
                             <Separator />
                             <div className="whitespace-nowrap">
-                                Or Sign Up With
+                                Or 
                             </div>
                             <Separator />
                         </div>
@@ -144,15 +91,9 @@ const RegisterPage = () => {
 
                         {/* onClick={handleGoogleSignIn} */}
                         <div className=" w-full p-2 flex justify-center items-center gap-2 border-2 border-gray-100">
-                            <Button className="w-full" variant="bordered" >  <FcGoogle /> <p>Sign Up with Google</p></Button>
+                            <Button className="w-full" variant="bordered" >  <FcGoogle /> <p>Sign in With Google</p></Button>
                         </div>
 
-                        <div className="flex gap-2">
-                            <p>Already have an account?</p>
-                            <Link className="text-center text-sm text-cyan-600 font-bold" href="#">
-                                Sign in
-                            </Link>
-                        </div>
                     </Card.Footer>
                 </Form>
             </Card>
@@ -160,4 +101,4 @@ const RegisterPage = () => {
     );
 };
 
-export default RegisterPage;
+export default LogInPage;
