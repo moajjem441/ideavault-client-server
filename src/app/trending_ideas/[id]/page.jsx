@@ -1,37 +1,10 @@
-// import React from 'react';
 
-// const TrendingDetails = async ({params}) => {
-//     const {id}= await params
-    
-//     const res = await fetch(`http://localhost:5000/trendingIdea/${id}`,{
-//         cache:"no-cache"
-//     })
-//     if(!res.ok){
-//         return "Error";
-//     }
-//     // console.log("res data",res)
-
-//     const trendingDetailsData= await res.json();
-//     if(!trendingDetailsData){
-//         return "No Data coming"
-//     }
-//     // console.log("trending Details Data",trendingDetailsData)
-//     const {title,detailedDescription,category,tags,imageUrl,estimatedBudget,targetAudience,problemStatement,proposedSolution,userEmail,createdAt} = trendingDetailsData;
-//     return (
-
-//         <div>
-//             <h1>View Details</h1>
-//         </div>
-//     );
-// };
-
-// export default TrendingDetails;
-
-
-
+import { auth } from "@/lib/auth";
 import { Card, Chip, Button } from "@heroui/react";
+import { headers } from "next/headers";
 import Image from 'next/image';
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { FaArrowLeft, FaCalendarAlt, FaEnvelope, FaWallet, FaRocket } from 'react-icons/fa';
 
 
@@ -42,6 +15,7 @@ export const metadata = {
 
 const TrendingDetails = async ({ params }) => {
     const { id } = await params;
+
 
     let trendingDetailsData = null;
     try {
@@ -64,6 +38,15 @@ const TrendingDetails = async ({ params }) => {
         userEmail, 
         createdAt 
     } = trendingDetailsData;
+
+
+  const session = await auth.api.getSession({
+    headers: await headers()
+  })
+
+  if(!session){
+    redirect('/register')
+  }
 
    
 //  const router =useRouter()

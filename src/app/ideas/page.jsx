@@ -1,9 +1,4 @@
 
-import React from 'react';
-import Marquee from "react-fast-marquee";
-import IdeasCard from '@/Components/IdeasCard';
-
-import { motion } from "framer-motion";
 import IdeasClient from '@/Components/IdeasClient';
 
 

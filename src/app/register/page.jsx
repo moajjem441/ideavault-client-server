@@ -156,7 +156,7 @@ const RegisterPage = () => {
 
                         <div className="flex gap-2">
                             <p>Already have an account?</p>
-                            <Link className="text-center text-sm text-cyan-600 font-bold" href="#">
+                            <Link className="text-center text-sm text-cyan-600 font-bold" href="/login">
                                 Sign in
                             </Link>
                         </div>

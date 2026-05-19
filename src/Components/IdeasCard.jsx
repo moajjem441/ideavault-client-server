@@ -1,7 +1,7 @@
 import { Button, Card } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+
 
 const IdeasCard = ({ idea }) => {
     const { _id, title, shortDescription, category, imageUrl } = idea;
@@ -26,7 +26,7 @@ const IdeasCard = ({ idea }) => {
                         <Card.Description className="text-[1rem] p-2">
                             {shortDescription}
                         </Card.Description>
-                        {/* <CloseButton aria-label=" banner" className="absolute top-3 right-3" /> */}
+                        
                     </Card.Header>
                     <Card.Footer className="mt-auto flex w-full flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
                         <div className="flex flex-col">
