@@ -1,4 +1,4 @@
-import { Button, Card,  } from "@heroui/react";
+import { Button, Card, } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,7 +7,12 @@ const TrendingCard = ({ trending }) => {
     return (
         <div className="m-2">
 
-            <Card className="w-full items-stretch md:flex-row p-3 ">
+            <Card className="w-full items-stretch md:flex-row p-3 
+transition-all duration-600 ease-out 
+hover:scale-105 hover:shadow-2xl hover:-translate-y-2 
+hover:shadow-cyan-400/20">
+
+
                 <div className="relative h-[140px] w-full shrink-0 overflow-hidden rounded-2xl sm:h-[120px] sm:w-[120px]">
                     <Image src={imageUrl} alt="image" width={120} height={110}></Image>
                 </div>

@@ -18,11 +18,14 @@ const TrendingIdeas =async () => {
 
     return (
         <div className='w-11/12 mx-auto py-5 '>
-            <Marquee speed={150}>
-  <h1 className="text-3xl lg:text-5xl font-extrabold p-5 my-7 text-cyan-400 italic tracking-tight drop-shadow-[0_2px_8px_rgba(34,211,238,0.3)]">
-  Trending Ideas
-</h1>
-     </Marquee>
+           <Marquee speed={120} gradient={false}>
+  <h1 className="text-4xl lg:text-6xl font-extrabold my-7 px-10 
+    bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 
+    text-transparent bg-clip-text 
+    drop-shadow-[0_0_20px_rgba(34,211,238,0.6)]">
+    Trending Ideas
+  </h1>
+</Marquee>
             
 
             <div className='grid grid-cols-1  lg:grid-cols-3 gap-3'>

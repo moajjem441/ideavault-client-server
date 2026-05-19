@@ -23,12 +23,12 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex="-1"
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li ><Link href="/">Home</Link></li>
-                            <li ><Link href="/ideas">Ideas</Link></li>
-                            <li ><Link href="/add-ideas">Add Ideas</Link></li>
-                            <li ><Link href="/my-ideas">My Ideas</Link></li>
-                            <li ><Link href="/my-interactions">My Interactions</Link></li>
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 text-bold p-2 shadow">
+                            <li className='text-lg font-bold'><Link href="/">Home</Link></li>
+                            <li className='text-lg font-bold'><Link href="/ideas">Ideas</Link></li>
+                            <li className='text-lg font-bold'><Link href="/add-ideas">Add Ideas</Link></li>
+                            <li className='text-lg font-bold'><Link href="/my-ideas">My Ideas</Link></li>
+                            <li className='text-lg font-bold'><Link href="/my-interactions">My Interactions</Link></li>
 
                         </ul>
                     </div>
@@ -37,17 +37,17 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li ><Link href="/">Home</Link></li>
-                        <li ><Link href="/ideas">Ideas</Link></li>
-                        <li ><Link href="/add-ideas">Add Ideas</Link></li>
-                        <li ><Link href="/my-ideas">My Ideas</Link></li>
-                        <li ><Link href="/my-interactions">My Interactions</Link></li>
+                        <li className='text-lg font-bold'><Link href="/">Home</Link></li>
+                        <li className='text-lg font-bold'><Link href="/ideas">Ideas</Link></li>
+                        <li className='text-lg font-bold'><Link href="/add-ideas">Add Ideas</Link></li>
+                        <li className='text-lg font-bold'><Link href="/my-ideas">My Ideas</Link></li>
+                        <li className='text-lg font-bold'><Link href="/my-interactions">My Interactions</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
                     <ul className='flex gap-3 justify-center items-center'>
-                        <li ><Link href="/">Login</Link></li>
-                        <li ><Link href="/register">Register</Link></li>
+                        <li className='text-lg font-bold'><Link href="/login">Login</Link></li>
+                        <li className='text-lg font-bold'><Link href="/register">Register</Link></li>
                         <li>
                             <ThemeSwitch></ThemeSwitch>
                         </li>
