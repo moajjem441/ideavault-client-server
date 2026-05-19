@@ -44,6 +44,7 @@ const EditProfilePage = () => {
             }
          }
 
+         
     return (
        <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 p-4">
             <Card className="w-96 p-6 rounded-2xl shadow-xl bg-white dark:bg-gray-800">
