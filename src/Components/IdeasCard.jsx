@@ -11,9 +11,9 @@ const IdeasCard = ({ idea }) => {
         <div className="m-2">
 
             <Card className="w-full items-stretch md:flex-row p-3 
-transition-all duration-600 ease-out 
-hover:scale-105 hover:shadow-2xl hover:-translate-y-2 
-hover:shadow-cyan-400/20">
+          transition-all duration-600 ease-out 
+            hover:scale-105 hover:shadow-2xl hover:-translate-y-2 
+               hover:shadow-cyan-400/20">
 
 
                 <div className="relative h-[140px] w-full shrink-0 overflow-hidden rounded-2xl sm:h-[120px] sm:w-[120px]">
