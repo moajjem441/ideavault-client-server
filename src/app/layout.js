@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import NextThemeProvider from "@/provider/NextThemeProvider";
 import Footer from "@/Components/Footer";
+import { Toaster } from "react-hot-toast";
 
 
 
@@ -40,7 +41,7 @@ export default function RootLayout({ children }) {
          </main>
          <Footer></Footer>
        </NextThemeProvider>
-
+          <Toaster />
         </body>
     </html>
   );

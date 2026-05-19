@@ -60,15 +60,7 @@ const TrendingDetails = async ({ params }) => {
 
     
     const { 
-        title, 
-        detailedDescription, 
-        category, 
-        tags, 
-        imageUrl, 
-        estimatedBudget, 
-        targetAudience, 
-        problemStatement, 
-        proposedSolution, 
+        title,  detailedDescription,   category,  tags, imageUrl, estimatedBudget,  targetAudience,  problemStatement,proposedSolution, 
         userEmail, 
         createdAt 
     } = trendingDetailsData;
@@ -89,22 +81,19 @@ const TrendingDetails = async ({ params }) => {
              
                 <Link href={'/'}> <Button
                    
-                    variant="light" 
+                    variant="primary" 
                     startContent={<FaArrowLeft />}
-                    className="font-semibold text-default-600 text-xl hover:text-primary transition duration-200"
+                    className="m-2 font-semibold text-default-600 text-xl hover:text-primary transition duration-200"
                 >
                     Back to All Ideas
                 </Button></Link>
               
                
-               
-
-                {/* Main Premium Master Hero Card */}
+             
                 <Card className="w-full border border-default-200/60 shadow-xl bg-background overflow-hidden rounded-3xl">
-                    
-                    {/* Upper Cover Showcase */}
+               
                     <div className="relative h-[260px] md:h-[380px] w-full bg-default-900 overflow-hidden">
-                        {/* Next.js native `<Image />` component replacing HeroUI loader */}
+                   
                         <Image 
                             src={imageUrl} 
                             alt={title} 
@@ -122,8 +111,7 @@ const TrendingDetails = async ({ params }) => {
 
                     
                     <div className="p-6 md:p-10 flex flex-col gap-8 w-full">
-                        
-                        {/* Title Headings and Budget */}
+                   
                         <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
                             <div className="space-y-2 max-w-3xl">
                                 <h1 className="text-3xl md:text-5xl font-black text-default-900 tracking-tight leading-tight">
@@ -133,17 +121,19 @@ const TrendingDetails = async ({ params }) => {
                                 <div className="flex flex-wrap gap-1.5 pt-2">
 
                                     {
+
                                     tags && tags.map((tag, i) => (
-                                        <Chip key={i} variant="flat" size="sm" className="text-default-600 font-semibold">
-                                            #{tag}
+                                        <Chip key={i} variant="flat" size="lg" className="text-default-600 font-semibold">
+                                            # {tag}
                                         </Chip>
                                     ))
+
                                     }
 
                                 </div>
                             </div>
 
-                            {/* Estimated Budget Card Widget */}
+                          
                             <div className="bg-success-50/50 border border-success-200/50 p-4 rounded-2xl flex items-center gap-3 shrink-0 md:w-[240px]">
                                 <div className="p-3 bg-success rounded-xl text-white shadow-md">
                                     <FaWallet className="w-5 h-5" />
@@ -155,10 +145,8 @@ const TrendingDetails = async ({ params }) => {
                             </div>
                         </div>
 
-                        {/* Native HTML Line Divider */}
                         <hr className="border-t border-default-200/60 my-2" />
 
-                        {/* Problem & Solution Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="bg-danger-50/20 border border-danger-100/70 p-5 rounded-2xl space-y-2">
                                 <h3 className="text-lg font-bold text-danger-700 border-l-4 border-danger pl-3 flex items-center gap-2">
