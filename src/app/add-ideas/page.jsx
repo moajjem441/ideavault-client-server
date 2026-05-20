@@ -5,35 +5,36 @@ import { Button, Card } from "@heroui/react";
 import { redirect, useRouter } from "next/navigation";
 import { FaWallet, FaRocket, FaCalendarAlt, FaImage } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { MdOutlineEmail } from "react-icons/md";
 
-export default  function InnovationForm() {
+export default function InnovationForm() {
 
     const router = useRouter();
 
-     const {data:session}=authClient.useSession();
-     
-     const user = session?.user
+    const { data: session } = authClient.useSession();
 
-        if (!user) {
-            router.push('/login')
-          
-        }
+    const user = session?.user
+
+    if (!user) {
+        router.push('/login')
+
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        
+
 
         const formData = new FormData(e.currentTarget);
         const data = Object.fromEntries(formData.entries());
 
         // console.log(" Form Data:", data);
-        if(data.tags){
-            data.tags=data.tags.split(',').map(tag=>tag.trim())
+        if (data.tags) {
+            data.tags = data.tags.split(',').map(tag => tag.trim())
         }
 
 
-       
+
 
         const req = await fetch(`http://localhost:5000/trendingIdea`, {
             method: "POST",
@@ -200,13 +201,39 @@ export default  function InnovationForm() {
 
                         <div className="bg-indigo-50/20 border border-indigo-100/70 p-5 rounded-2xl space-y-2">
                             <h4 className="text-xs font-bold text-green-600 uppercase tracking-wider flex items-center gap-2">
-                               <FaImage /> Image URL
+                                <FaImage /> Image URL
                             </h4>
                             <input
                                 type="url"
                                 name="imageUrl"
                                 placeholder="https://example.com/project-thumbnail.jpg"
                                 className="w-full bg-transparent text-default-600 text-sm font-semibold border-b border-indigo-200 focus:border-indigo-500 outline-none py-1 placeholder:text-default-400 placeholder:font-normal"
+                            />
+                        </div>
+
+
+
+                        <div className="bg-indigo-50/20 border border-indigo-100/70 p-5 rounded-2xl space-y-2">
+                            <h4 className="text-xs font-bold text-green-600 uppercase tracking-wider flex items-center gap-2">
+                                <FaImage /> Your mail which you used to log in
+                            </h4>
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="example@gmail.com"
+                                className="w-full bg-transparent text-default-600 text-sm font-semibold border-b border-indigo-200 focus:border-indigo-500 outline-none py-1 placeholder:text-default-400 placeholder:font-normal"
+                            />
+                        </div>
+
+
+                        <div className="bg-indigo-50/20 border border-indigo-100/70 p-5 rounded-2xl space-y-2">
+                            <h4 className="text-xs font-bold text-green-600 uppercase tracking-wider flex items-center gap-2">
+                                <FaCalendarAlt /> Date
+                            </h4>
+                            <input
+                                type="date"
+                                name="date"
+                                className="w-full bg-transparent text-default-600 text-sm font-semibold border-b border-indigo-200 focus:border-indigo-500 outline-none py-1 uppercase"
                             />
                         </div>
 
