@@ -5,20 +5,10 @@ import { Button, Card } from "@heroui/react";
 import { redirect, useRouter } from "next/navigation";
 import { FaWallet, FaRocket, FaCalendarAlt, FaImage } from "react-icons/fa";
 import toast from "react-hot-toast";
-import { MdOutlineEmail } from "react-icons/md";
 
 export default function InnovationForm() {
 
-    const router = useRouter();
-
-    const { data: session } = authClient.useSession();
-
-    const user = session?.user
-
-    if (!user) {
-        router.push('/login')
-
-    }
+  
 
     const handleSubmit = async (e) => {
         e.preventDefault();

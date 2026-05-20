@@ -44,9 +44,9 @@ const TrendingDetails = async ({ params }) => {
     headers: await headers()
   })
 
-  if(!session){
-    redirect('/register')
-  }
+//   if(!session){
+//     redirect('/register')
+//   }
 
    
 

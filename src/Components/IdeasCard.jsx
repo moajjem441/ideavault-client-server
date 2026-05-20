@@ -23,7 +23,7 @@ const IdeasCard = ({ idea }) => {
                 <div className="flex flex-1 flex-col gap-3">
                     <Card.Header className="gap-1">
                         <Card.Title className="pr-8 text-2xl p-2">{title}!</Card.Title>
-                        <Card.Description className="text-[1rem] p-2">
+                        <Card.Description className="text-[1rem] p-2 line-clamp-3">
                             {shortDescription}
                         </Card.Description>
                         
