@@ -34,7 +34,7 @@ const TrendingDetails = async ({ params }) => {
 
     
     const { 
-        title,  detailedDescription,   category,  tags, imageUrl, estimatedBudget,  targetAudience,  problemStatement,proposedSolution, 
+        title,shortDescription,  detailedDescription,   category,  tags, imageUrl, estimatedBudget,  targetAudience,  problemStatement,proposedSolution, 
         userEmail, 
         createdAt 
     } = trendingDetailsData;
@@ -49,12 +49,7 @@ const TrendingDetails = async ({ params }) => {
   }
 
    
-//  const router =useRouter()
 
-//  const handleButton=()=>{
-//     router.push('/');
-//     router.refresh()
-//  }
 
 
     return (
@@ -105,7 +100,8 @@ const TrendingDetails = async ({ params }) => {
 
                                     {
 
-                                    tags && tags.map((tag, i) => (
+                                    tags && tags.map((tag, i) =>
+                                         (
                                         <Chip key={i} variant="flat" size="lg" className="text-default-600 font-semibold">
                                             # {tag}
                                         </Chip>
@@ -150,10 +146,23 @@ const TrendingDetails = async ({ params }) => {
                             </div>
                         </div>
 
+                    
+
+
+                          <div className="space-y-3">
+                            <h3 className="text-xl font-bold text-default-800 border-l-4 border-purple-500 pl-3">
+                            In short Description
+                            </h3>
+                            <div className="bg-default-50 border border-default-100 p-6 rounded-2xl text-default-600 text-base leading-relaxed whitespace-pre-line font-medium">
+                                {shortDescription}
+                            </div>
+                        </div>
+
+
                         {/* Detailed Workflow */}
                         <div className="space-y-3">
                             <h3 className="text-xl font-bold text-default-800 border-l-4 border-primary pl-3">
-                                Deep-Dive Execution Workflow
+                                Deep-Dive Execution Workflow (Details Description)
                             </h3>
                             <div className="bg-default-50 border border-default-100 p-6 rounded-2xl text-default-700 text-base leading-relaxed whitespace-pre-line font-medium">
                                 {detailedDescription}
