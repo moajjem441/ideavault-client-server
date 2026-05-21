@@ -41,9 +41,8 @@ const VaultPhilosophy = () => {
           ))}
         </div>
 
-        
-
       </Card>
+      
     </div>
   );
 };
