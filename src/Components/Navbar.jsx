@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { authClient } from '@/lib/auth-client';
 import { Avatar, Button } from '@heroui/react';
+import ProfilePage from '@/app/profile/page';
 
 
 
@@ -65,14 +66,11 @@ const user = session?.user;
                   {
                     user ? 
                     <>
-                      <li> <Link href={'/profile'}>
+                      <li>   
                      
-                        <Avatar>
-                                <Avatar.Image referrerPolicy='no-referrer' alt="John Doe" src={user.image} />
-                                <Avatar.Fallback>{user.name}</Avatar.Fallback>
-                            </Avatar>
+                       <ProfilePage ></ProfilePage>
                      
-                      </Link></li>
+                      </li>
 
 
                        

@@ -4,7 +4,9 @@ import { Card, Chip, Button } from "@heroui/react";
 import { headers } from "next/headers";
 import Image from 'next/image';
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import BackButton from "../../../Components/BackButton"
+
+
 import { FaArrowLeft, FaCalendarAlt, FaEnvelope, FaWallet, FaRocket } from 'react-icons/fa';
 
 
@@ -15,6 +17,7 @@ export const metadata = {
 
 const TrendingDetails = async ({ params }) => {
     const { id } = await params;
+        
 
 
     let trendingDetailsData = null;
@@ -28,9 +31,7 @@ const TrendingDetails = async ({ params }) => {
         return <div className="text-center py-20 text-default-400">Backend connectivity trace failed...</div>;
     }
 
-    if (!trendingDetailsData) {
-        return <div className="text-center py-20 text-default-500">No data found matching this innovation directory matrix target index.</div>;
-    }
+    
 
     
     const { 
@@ -57,14 +58,12 @@ const TrendingDetails = async ({ params }) => {
             <div className="max-w-5xl mx-auto space-y-6">
                 
              
-                <Link href={'/'}> <Button
-                   
-                    variant="primary" 
-                    startContent={<FaArrowLeft />}
-                    className="m-2 font-semibold text-default-600 text-xl hover:text-primary transition duration-200"
-                >
-                    Back to All Ideas
-                </Button></Link>
+             
+
+<BackButton 
+  variant="primary"
+  className="m-2 font-semibold text-default-600 text-xl hover:text-primary transition duration-200" 
+/>
               
                
              

@@ -73,7 +73,7 @@ const EditProfilePage = () => {
                     </div>
 
                     <div className="flex gap-2 border-t pt-4">
-                        <Link href={'/profile'} className="flex-1">
+                        <Link href={'/'} className="flex-1">
                          
                             <Button type="button" variant="flat" size="sm" className="w-full rounded-full">
                                 Cancel

@@ -91,10 +91,9 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-default-100 text-default-800 border-t border-default-200  mt-20">
-      {/* Upper Layout: Columns Grid */}
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        {/* Navigation Section */}
+   
         <div className="flex flex-col gap-3">
           <h3 className="text-xl font-bold border-l-4 border-primary pl-3 text-default-900">
             IdeaVault
@@ -102,14 +101,16 @@ const Footer = () => {
           <ul className="space-y-2 text-default-600 font-medium">
             <li><Link href="/" className="hover:text-primary transition duration-200">Home</Link></li>
             <li><Link href="/ideas" className="hover:text-primary transition duration-200">All Ideas</Link></li>
-            <li><Link href="/categories/tech" className="hover:text-primary transition duration-200">Tech</Link></li>
-            <li><Link href="/categories/health" className="hover:text-primary transition duration-200">Health</Link></li>
-            <li><Link href="/categories/ai" className="hover:text-primary transition duration-200">AI</Link></li>
-            <li><Link href="/categories/education" className="hover:text-primary transition duration-200">Education</Link></li>
+            <li><Link href="/my-ideas" className="hover:text-primary transition duration-200">My Ideas</Link></li>
+            <li><Link href="/add-ideas" className="hover:text-primary transition duration-200">Add Ideas</Link></li>
+            <li><Link href="/my-interaction" className="hover:text-primary transition duration-200">My Interaction</Link></li>
+            
           </ul>
         </div>
 
-        {/* Contact Information Section */}
+
+
+
         <div className="flex flex-col gap-3">
           <h3 className="text-xl font-bold border-l-4 border-primary pl-3 text-default-900">
             Contact
@@ -132,7 +133,11 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Social Connections Section */}
+
+
+
+
+
         <div className="flex flex-col gap-4">
           <h3 className="text-xl font-bold border-l-4 border-primary pl-3 text-default-900">
             Follow Us
@@ -159,7 +164,7 @@ const Footer = () => {
 
       </div>
 
-      {/* Lower Layout: Copyright Meta Baseline */}
+
       <div className="border-t border-default-200 bg-default-50">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left text-default-500 text-sm font-medium">
           <p>&copy; {currentYear} IdeaVault – Startup Idea Sharing Platform. All rights reserved.</p>

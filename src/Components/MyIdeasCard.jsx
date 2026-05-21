@@ -1,10 +1,12 @@
 import { Button, Card } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import EditMyIdea from './EditMyIdea';
+import DeleteMyIdea from './DeleteMyIdea';
 
 
 
-const IdeasCard = ({ idea }) => {
+const MyIdeasCard = ({ idea }) => {
     // console.log(idea)
 
     const { _id, title, shortDescription, category, imageUrl } = idea;
@@ -36,6 +38,28 @@ const IdeasCard = ({ idea }) => {
                             <span className="text-sm font-medium text-foreground">Only 10 spots</span>
                             <span className="text-xs text-muted">Submission ends Oct 10.</span>
                         </div>
+
+          
+           <Link href={`/edit-my-idea/${_id}`}>
+      <Button variant="secondary" className="w-full sm:w-auto">
+        Edit
+      </Button>
+    </Link> 
+
+    {/* <EditMyIdea key={idea._id} idea={idea}>
+        <Button variant="secondary" className="w-full sm:w-auto">
+        Edit
+      </Button>
+    </EditMyIdea> */}
+
+  
+    <DeleteMyIdea key={_id} idea={idea}>
+        
+    </DeleteMyIdea>
+
+
+
+
                         <Link href={`/trending_ideas/${_id}`}> <Button className="w-full sm:w-auto">View Details</Button></Link>
                     </Card.Footer>
                 </div>
@@ -45,4 +69,4 @@ const IdeasCard = ({ idea }) => {
     );
 };
 
-export default IdeasCard;
+export default MyIdeasCard;

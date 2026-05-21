@@ -19,5 +19,5 @@ return NextResponse.redirect(new URL('/login', request.url))
 
  
 export const config = {
-  matcher: ['/trending_ideas/:path','/ideas/:path','/add-ideas','/my-idea'],
+  matcher: ['/trending_ideas/:path','/ideas/:path','/add-ideas','/my-idea','/profile'],
 }

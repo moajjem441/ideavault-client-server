@@ -1,13 +1,12 @@
 
 'use client'
-import { authClient } from "@/lib/auth-client";
 import { Button, Card } from "@heroui/react";
-import { redirect, useRouter } from "next/navigation";
 import { FaWallet, FaRocket, FaCalendarAlt, FaImage } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
-export default function InnovationForm() {
-
+export default function AddIdea() {
+const router = useRouter()
   
 
     const handleSubmit = async (e) => {
@@ -39,7 +38,7 @@ export default function InnovationForm() {
 
         if (info.insertedId) {
             toast.success("Idea Added Successfully")
-            router.push('/ideas')
+            router.push('/my-ideas')
         }
 
         return info
