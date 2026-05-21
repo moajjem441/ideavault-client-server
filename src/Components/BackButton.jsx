@@ -9,7 +9,10 @@ export default function BackButton({ className, variant }) {
 
   return (
     <Button
-      onClick={() => router.back()} 
+      onClick={() =>{
+        router.back()
+        router.refresh()
+      } } 
       variant={variant || "primary"}
       startContent={<FaArrowLeft />}
       className={className}

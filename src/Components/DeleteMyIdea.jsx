@@ -18,7 +18,7 @@ const handleDeleteButton = async()=>{
     const res = await fetch(
       `http://localhost:5000/my-ideas/${idea.email}/${idea._id}`,
       {
-        method: "Delete",
+        method: "DELETE",
         headers: {
           "content-type": "application/json",
         },

@@ -39,6 +39,7 @@ const router = useRouter()
         if (info.insertedId) {
             toast.success("Idea Added Successfully")
             router.push('/my-ideas')
+            router.refresh()
         }
 
         return info

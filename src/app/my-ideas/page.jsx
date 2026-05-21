@@ -19,7 +19,7 @@ const MyIdeasPage = async () => {
 
     const ideas=await req.json();
 
-    console.log("ideas",ideas)
+    // console.log("ideas",ideas)
 
 
     return (
