@@ -1,11 +1,31 @@
 
 import IdeasClient from '@/Components/IdeasClient';
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
 
+// 
+const IdeasPage = async ({searchParams}) => {
 
-const IdeasPage = async () => {
+    const {search,title,category,startDate,endDate}=await searchParams;
 
-    const res = await fetch('http://localhost:5000/ideas', {
-        cache: "no-cache"
+    const params= new URLSearchParams()
+
+   if (search) params.append("search", search);
+    if (category) params.append("category", category);
+    if (startDate) params.append("startDate", startDate);
+    if (endDate) params.append("endDate", endDate);
+
+    //--------get token-------
+    const token =await auth.api.getToken({
+        headers: await headers()
+    })
+
+    // ?${params.toString()}
+   const res = await fetch(`http://localhost:5000/ideas?${params.toString()}`, {
+        cache: "no-cache",
+        // headers:{
+        //     authorization: `Bearer ${token}`
+        // }
     });
 
     if (!res.ok) {

@@ -9,6 +9,9 @@ export default function AddIdea() {
 const router = useRouter()
   
 
+//------get token-------
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 

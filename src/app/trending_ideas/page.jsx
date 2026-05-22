@@ -1,12 +1,25 @@
 import TrendingCard from '@/Components/TrendingCard';
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
 import React from 'react';
 import Marquee from "react-fast-marquee";
 
 const TrendingIdeas =async () => {
+
+
+    //-------get token---------
+    // const {token} = await auth.api.getToken({
+    //     headers: await headers()
+    // })
+    // console.log(token)
   
     const res = await fetch('http://localhost:5000/trendingIdea',{
-        cache:"no-cache"
+        cache:"no-cache",
+        // headers: {
+        //     authorization:`Bearer ${token}`
+        // }
     });
+    
     if(!res.ok){
         return "Error";
     }

@@ -2,11 +2,40 @@
 
 import { motion } from "framer-motion";
 import IdeasCard from "@/Components/IdeasCard";
-import { text } from "framer-motion/client";
+import { useRouter } from "next/navigation";
+import {Button, Label, SearchField} from "@heroui/react";
+
 
 export default function IdeasClient({ ideasData }) {
+  const router = useRouter();
+
+  // const handleSearch = (e)=>{
+  //   const value = e.target.value;
+  //   router.push(`/ideas?search=${value}`);
+  // }
+
+  console.log(ideasData)
   return (
     <div  className="p-5">
+
+      {/* <input type="text" onChange={(e)=>router.push(`/ideas?search=${e.target.value}`)} 
+      placeholder="search" className="border p-2 mb-5 w-full">
+      </input> */}
+
+
+    
+        <SearchField name="search" className="p-3" >
+      <Label>Search</Label>
+      <SearchField.Group>
+        <SearchField.SearchIcon />
+        <SearchField.Input className="w-[280px]" placeholder="Search..."
+        onChange={(e)=>router.push(`/ideas?search=${e.target.value}`)} />
+        <SearchField.ClearButton />
+      </SearchField.Group>
+    </SearchField>
+       
+    
+      
       
     <motion.h1
       initial={{ opacity: 0, y: 40, scale: 0.9 }}

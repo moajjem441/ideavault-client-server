@@ -1,13 +1,13 @@
 
 import { auth } from "@/lib/auth";
-import { Card, Chip, Button } from "@heroui/react";
+import { Button, Card, Chip} from "@heroui/react";
 import { headers } from "next/headers";
 import Image from 'next/image';
-import Link from "next/link";
 import BackButton from "../../../Components/BackButton"
 
 
-import { FaArrowLeft, FaCalendarAlt, FaEnvelope, FaWallet, FaRocket } from 'react-icons/fa';
+import { FaCalendarAlt, FaEnvelope, FaWallet, FaRocket } from 'react-icons/fa';
+import ShowAllComments from "@/Components/ShowAllComments";
 
 
 export const metadata = {
@@ -18,12 +18,19 @@ export const metadata = {
 const TrendingDetails = async ({ params }) => {
     const { id } = await params;
         
+     //--------get token-------
+    const token =await auth.api.getToken({
+        headers: await headers()
+    })
 
 
     let trendingDetailsData = null;
     try {
         const res = await fetch(`http://localhost:5000/trendingIdea/${id}`,{
-            cache:"no-cache"
+            cache:"no-cache",
+            // headers:{
+            //     authorization:`Bearer ${token}`
+            // }
         });
         if (!res.ok) return <div className="text-center py-20 text-danger font-bold">Error loading concept data grid!</div>;
         trendingDetailsData = await res.json();
@@ -196,6 +203,10 @@ const TrendingDetails = async ({ params }) => {
                                     <a href={`mailto:${userEmail}`} className="text-s text-cyan-300 font-bold text-primary hover:underline">{userEmail}</a>
                                 </div>
                             </div>
+
+                                      <div>
+                                        <ShowAllComments></ShowAllComments>
+                                        </div>
 
                             <div className="flex items-center gap-2 text-default-400 text-xs px-2">
                                 <FaCalendarAlt />

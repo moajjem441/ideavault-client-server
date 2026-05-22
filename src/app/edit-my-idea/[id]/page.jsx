@@ -6,13 +6,23 @@ import React from 'react';
 const EditMyIdeaPage = async ({params}) => {
     const {id}=await params
 
+
+    //--------get token-------
+    // const token =await auth.api.getToken({
+    //     headers: await headers()
+    // })
+
     const session = await auth.api.getSession({
         headers: await headers()
     })
 
     const email = session?.user?.email
 
-    const res= await fetch(`http://localhost:5000/my-ideas/${email}/${id}`)
+    const res= await fetch(`http://localhost:5000/my-ideas/${email}/${id}`,{
+        // headers:{
+        //     authorization:`Bearer ${token}`
+        // }
+    })
     // console.log("res daa",res)
     const idea = await res.json()
     return (
