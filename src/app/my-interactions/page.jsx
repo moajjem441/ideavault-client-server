@@ -26,9 +26,11 @@ const MyInteractionPage = async () => {
 
     const myIdeaComments = myComments.map((comment) => ({
         ideaTitle: comment.ideaTitle,
+        
         commentText: comment.commentText,
         createdAt: comment.createdAt,
         _id: comment._id,
+
     }));
 
     console.log('mycomment', myComments);
