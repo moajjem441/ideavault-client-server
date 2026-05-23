@@ -28,9 +28,8 @@ const Comments = ({comment}) => {
                        </p>
                        <div>
       {sessionUserId === userId && (
+        
         <div className="flex gap-2">
-         {/* <Link href={`/edit-comments/${_id}`}> <button className="text-blue-500 text-xs">Edit</button></Link>
-          <button className="text-red-500 text-xs">Delete</button> */}
 
           <EditComment key={_id} commentText={commentText} commentId={_id}></EditComment>
               <DeleteComment  commentId={_id}></DeleteComment>
