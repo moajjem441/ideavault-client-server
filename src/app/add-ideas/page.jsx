@@ -4,12 +4,11 @@ import { Button, Card } from "@heroui/react";
 import { FaWallet, FaRocket, FaCalendarAlt, FaImage } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { authClient } from "@/lib/auth-client";
 
 export default function AddIdea() {
 const router = useRouter()
   
-
-//------get token-------
 
 
     const handleSubmit = async (e) => {
@@ -31,10 +30,18 @@ const router = useRouter()
 
 
 
+
+        //------get token-------
+
+const {data:tokenData}=await authClient.token();
+
+
+
         const req = await fetch(`http://localhost:5000/trendingIdea`, {
             method: "POST",
             headers: {
-                'content-type': "application/json"
+                'content-type': "application/json",
+                authorization:`Bearer ${tokenData?.token}`
             },
             body: JSON.stringify(data)
 

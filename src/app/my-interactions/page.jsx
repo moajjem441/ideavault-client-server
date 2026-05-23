@@ -20,13 +20,12 @@ const MyInteractionPage = async () => {
 
 
     const myComments = Array.isArray(allComments)
-        ? allComments.filter((comment) => comment.userId === sessionUserId)
-        : [];
+        ? allComments.filter((comment) => comment.userId === sessionUserId) : [];
 
 
     const myIdeaComments = myComments.map((comment) => ({
         ideaTitle: comment.ideaTitle,
-        
+
         commentText: comment.commentText,
         createdAt: comment.createdAt,
         _id: comment._id,

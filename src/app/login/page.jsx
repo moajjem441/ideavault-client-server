@@ -31,6 +31,13 @@ const LogInPage = () => {
         }
     }
 
+      const handleGoogleSignIn= async()=>{
+            await authClient.signIn.social({
+                provider:"google",
+                callbackURL: "/"
+            });
+        };
+
     return (
         <div className='my-15'>
             <h1 className="text-center text-3xl">Log In your Account</h1>
@@ -91,7 +98,7 @@ const LogInPage = () => {
 
                         {/* onClick={handleGoogleSignIn} */}
                         <div className=" w-full p-2 flex justify-center items-center gap-2 border-2 border-gray-100">
-                            <Button className="w-full" variant="bordered" >  <FcGoogle /> <p>Sign in With Google</p></Button>
+                            <Button className="w-full" variant="bordered" onClick={handleGoogleSignIn}>  <FcGoogle /> <p>Sign in With Google</p></Button>
                         </div>
 
                     </Card.Footer>
