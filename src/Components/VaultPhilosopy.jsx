@@ -27,16 +27,23 @@ const VaultPhilosophy = () => {
 
         {/* Grid with Tailwind Hover */}
         <div className="grid md:grid-cols-2 gap-6 pt-6 border-t border-default-100 dark:border-default-800">
+
           {points.map((item, index) => (
             <div 
               key={index}
+
               className="p-6 rounded-2xl bg-default-50 dark:bg-zinc-800/50 border border-default-100 dark:border-default-700 cursor-pointer 
               transition-all duration-300 ease-out 
               hover:-translate-y-2 hover:shadow-lg hover:border-primary/50"
             >
-              <div className="text-primary mb-3">{item.icon}</div>
-              <h4 className="font-bold text-xl mb-2 text-default-900 dark:text-white">{item.title}</h4>
-              <p className="text-default-600 dark:text-default-400 text-base">{item.desc}</p>
+              <div className="text-primary mb-3"
+              >{item.icon}
+              </div>
+              <h4 className="font-bold text-xl mb-2 text-default-900 dark:text-white">
+                {item.title}</h4>
+              <p className="text-default-600 dark:text-default-400 text-base">
+                {item.desc}
+                </p>
             </div>
           ))}
         </div>

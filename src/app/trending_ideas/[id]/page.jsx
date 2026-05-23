@@ -41,7 +41,7 @@ const TrendingDetails = async ({ params }) => {
     
 
     
-    const { 
+    const { _id,
         title,shortDescription,  detailedDescription,   category,  tags, imageUrl, estimatedBudget,  targetAudience,  problemStatement,proposedSolution, 
         userEmail, 
         createdAt 
@@ -204,9 +204,11 @@ const TrendingDetails = async ({ params }) => {
                                 </div>
                             </div>
 
+
                                       <div>
-                                        <ShowAllComments></ShowAllComments>
+                                        <ShowAllComments key={_id} IdeaDetailsData={trendingDetailsData} ></ShowAllComments>
                                         </div>
+
 
                             <div className="flex items-center gap-2 text-default-400 text-xs px-2">
                                 <FaCalendarAlt />
