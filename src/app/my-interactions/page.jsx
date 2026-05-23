@@ -11,10 +11,20 @@ const MyInteractionPage = async () => {
     const sessionUserId = user?.id;
     console.log('sessionUserId', sessionUserId);
 
+    // --------get token---------
+    const {token} = await auth.api.getToken({
+        headers: await headers()
+    })
 
-    const req = await fetch(`http://localhost:5000/all-comments`, {
+
+    const req = await fetch(`${process.env.SERVER_URI}/all-comments`, {
         cache: 'no-cache',
+        headers:{
+            authorization:`Bearer ${token}`
+        }
     });
+
+
     const allComments = await req.json();
     console.log('all comments', allComments);
 
@@ -47,7 +57,7 @@ const MyInteractionPage = async () => {
                             <h2 className="text-xl font-semibold text-primary">
                                 {comment.ideaTitle}
                             </h2>
-                            <p className="text-gray-700 mt-1">{comment.commentText}</p>
+                            <p className="text-pink-300-700 mt-1">{comment.commentText}</p>
                             <p className="text-xs text-gray-400 mt-2">
                                 {new Date(comment.createdAt).toLocaleString()}
                             </p>

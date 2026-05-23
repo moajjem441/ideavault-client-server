@@ -9,7 +9,7 @@ const DeleteComment = ({commentId}) => {
     const handleDeleteButton=async(e)=>{
         console.log("commentID",commentId)
 
-        const res = await fetch(`http://localhost:5000/all-comments/${commentId}`,{
+        const res = await fetch(`${process.env.SERVER_URI}/all-comments/${commentId}`,{
             method:"DELETE",
             headers: {
           "content-type": "application/json",

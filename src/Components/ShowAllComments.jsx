@@ -25,7 +25,7 @@ const ShowAllComments = ({ IdeaDetailsData }) => {
 
   const handleShowAllButton = async () => {
 
-    const req = await fetch(`http://localhost:5000/all-comments/${_id}`, {
+    const req = await fetch(`${process.env.SERVER_URI}/all-comments/${_id}`, {
       cache: "no-cache"
     })
     const data = await req.json()

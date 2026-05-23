@@ -18,7 +18,7 @@ const EditMyIdeaPage = async ({params}) => {
 
     const email = session?.user?.email
 
-    const res= await fetch(`http://localhost:5000/my-ideas/${email}/${id}`,{
+    const res= await fetch(`${process.env.SERVER_URI}/my-ideas/${email}/${id}`,{
         // headers:{
         //     authorization:`Bearer ${token}`
         // }

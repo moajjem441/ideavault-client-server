@@ -13,7 +13,7 @@ const TrendingIdeas =async () => {
     // })
     // console.log(token)
   
-    const res = await fetch('http://localhost:5000/trendingIdea',{
+    const res = await fetch(`${process.env.SERVER_URI}/trendingIdea`,{
         cache:"no-cache",
         // headers: {
         //     authorization:`Bearer ${token}`

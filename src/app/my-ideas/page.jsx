@@ -17,7 +17,7 @@ const MyIdeasPage = async () => {
     // console.log("user",user)
     // console.log("email",user?.email)
 
-    const req= await fetch(`http://localhost:5000/my-ideas/${user?.email}`,{
+    const req= await fetch(`${process.env.SERVER_URI}/my-ideas/${user?.email}`,{
         cache:"no-store",
         headers:{
             authorization:`Bearer ${token}`

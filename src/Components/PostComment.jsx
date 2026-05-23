@@ -1,3 +1,4 @@
+'use client'
 import {Button, Form, Input} from "@heroui/react";
 import toast from "react-hot-toast";
 
@@ -26,7 +27,7 @@ const handleSubmit =async(e)=>{
     };
 
     try{
-        const res = await fetch("http://localhost:5000/add-comment",{
+        const res = await fetch(`${process.env.SERVER_URI}/add-comment`,{
             method:"POST",
             headers:{
                 'content-type':"application/json"
@@ -34,8 +35,9 @@ const handleSubmit =async(e)=>{
             body:JSON.stringify(commentData)
         })
 
+        console.log("post res",res)
         if(res.ok){
-                alert("Comment posted successfully");
+                // alert("Comment posted successfully");
                 toast.success("Comment posted successfully")
                 e.target.reset()
                

@@ -21,7 +21,7 @@ const IdeasPage = async ({searchParams}) => {
     })
 
     // ?${params.toString()}
-   const res = await fetch(`http://localhost:5000/ideas?${params.toString()}`, {
+   const res = await fetch(`${process.env.SERVER_URI}/ideas?${params.toString()}`, {
         cache: "no-cache",
         // headers:{
         //     authorization: `Bearer ${token}`
