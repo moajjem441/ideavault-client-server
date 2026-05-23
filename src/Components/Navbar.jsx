@@ -5,10 +5,14 @@ import Link from 'next/link';
 import { authClient } from '@/lib/auth-client';
 import { Avatar, Button } from '@heroui/react';
 import ProfilePage from '@/app/profile/page';
+import { usePathname, useRouter } from 'next/navigation';
 
 
 
 const Navbar = () => {
+    const router =useRouter()
+
+    const pathName=usePathname()
 
  const { data: session } = authClient.useSession();
 const user = session?.user;
@@ -23,6 +27,7 @@ const user = session?.user;
 
     const handleLogOutButton= async()=>{
         await authClient.signOut();
+        router.push('/login')
     }
 
     return (
@@ -39,11 +44,11 @@ const user = session?.user;
                         <ul
                             tabIndex="-1"
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 text-bold p-2 shadow">
-                            <li className='text-lg font-bold'><Link href="/">Home</Link></li>
-                            <li className='text-lg font-bold'><Link href="/ideas">Ideas</Link></li>
-                            <li className='text-lg font-bold'><Link href="/add-ideas">Add Ideas</Link></li>
-                            <li className='text-lg font-bold'><Link href="/my-ideas">My Ideas</Link></li>
-                            <li className='text-lg font-bold'><Link href="/my-interactions">My Interactions</Link></li>
+                            <li ><Link  href="/"  className={`text-lg font-bold ${pathName==='/' ? 'text-sky-500' : " "}`}>Home</Link></li>
+                            <li ><Link href="/ideas"  className={`text-lg font-bold ${pathName==='/ideas' ? 'text-sky-500' : " "}`}>Ideas</Link></li>
+                            <li ><Link href="/add-ideas"  className={`text-lg font-bold ${pathName==='/add-ideas' ? 'text-sky-500' : " "}`}>Add Ideas</Link></li>
+                            <li ><Link href="/my-ideas"  className={`text-lg font-bold ${pathName==='/my-ideas' ? 'text-sky-500' : " "}`}>My Ideas</Link></li>
+                            <li ><Link href="/my-interactions"  className={`text-lg font-bold ${pathName==='/my-interactions' ? 'text-sky-500' : " "}`}>My Interactions</Link></li>
 
                         </ul>
                     </div>
@@ -52,11 +57,11 @@ const user = session?.user;
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li className='text-lg font-bold'><Link href="/">Home</Link></li>
-                        <li className='text-lg font-bold'><Link href="/ideas">Ideas</Link></li>
-                        <li className='text-lg font-bold'><Link href="/add-ideas">Add Ideas</Link></li>
-                        <li className='text-lg font-bold'><Link href="/my-ideas">My Ideas</Link></li>
-                        <li className='text-lg font-bold'><Link href="/my-interactions">My Interactions</Link></li>
+                        <li><Link href="/"   className={`text-lg font-bold ${pathName==='/' ? 'text-sky-500' : " "}`}>Home</Link></li>
+                            <li ><Link href="/ideas"  className={`text-lg font-bold ${pathName==='/ideas' ? 'text-sky-500' : " "}`}>Ideas</Link></li>
+                            <li ><Link href="/add-ideas"  className={`text-lg font-bold ${pathName==='/add-ideas' ? 'text-sky-500' : " "}`}>Add Ideas</Link></li>
+                            <li ><Link href="/my-ideas"  className={`text-lg font-bold ${pathName==='/my-ideas' ? 'text-sky-500' : " "}`}>My Ideas</Link></li>
+                            <li ><Link href="/my-interactions"  className={`text-lg font-bold ${pathName==='/my-interactions' ? 'text-sky-500' : " "}`}>My Interactions</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
@@ -73,10 +78,10 @@ const user = session?.user;
                       </li>
 
 
-                       
+                       <Button onClick={handleLogOutButton} variant='danger'>Log out</Button>
 
 
-                            <li className='text-lg font-bold'><Link href="/login"><Button onClick={handleLogOutButton} variant='danger'>Log out</Button></Link></li>
+                            {/* <li className='text-lg font-bold'><Link href="/login"><Button onClick={handleLogOutButton} variant='danger'>Log out</Button></Link></li> */}
 
                     </>
                     :

@@ -9,6 +9,7 @@ const PostComment = ({IdeaDetailsData,user}) => {
     const userName=user?.name
     const userImage=user?.image
     const ideaId=IdeaDetailsData?._id
+    const ideaTitle=IdeaDetailsData?.title
 
     console.log("user",user)
 const handleSubmit =async(e)=>{
@@ -18,7 +19,7 @@ const handleSubmit =async(e)=>{
     const commentText=formData.get("commentText")
 
     const commentData = {
-        ideaId,userId,userName,userImage,
+        ideaId,userId,userName,userImage,ideaTitle,
         commentText,
         createdAt : new Date().toISOString(),
                
@@ -34,7 +35,7 @@ const handleSubmit =async(e)=>{
         })
 
         if(res.ok){
-                // alert("Comment posted successfully");
+                alert("Comment posted successfully");
                 toast.success("Comment posted successfully")
                 e.target.reset()
                

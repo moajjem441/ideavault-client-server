@@ -48,17 +48,7 @@ const EditComment = ({commentText,commentId}) => {
     defaultValue={commentText}
     variant="bordered"
     radius="lg"
-    endContent={
-      <Button 
-        type="submit" 
-        variant="light" 
-        isIconOnly 
-        size="sm"
-        className="text-2xl"
-      >
-        <MdFileDownloadDone />
-      </Button>
-    }
+    
   />
         <Button type="submit" variant="outline" className="text-2xl">
        <MdFileDownloadDone />

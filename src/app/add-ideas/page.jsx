@@ -25,6 +25,9 @@ const router = useRouter()
             data.tags = data.tags.split(',').map(tag => tag.trim())
         }
 
+        if(data.category){
+            data.category=data.category.split(',').map(category=>category.trim())
+        }
 
 
 
