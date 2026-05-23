@@ -5,6 +5,10 @@ import { headers } from "next/headers";
 
 const MyIdeasPage = async () => {
 
+    const {token} = await auth.api.getToken({
+        headers: await headers()
+    })
+
     const session= await auth.api.getSession({
         headers: await headers()
     }
@@ -14,7 +18,10 @@ const MyIdeasPage = async () => {
     // console.log("email",user?.email)
 
     const req= await fetch(`http://localhost:5000/my-ideas/${user?.email}`,{
-        cache:"no-store"
+        cache:"no-store",
+        headers:{
+            authorization:`Bearer ${token}`
+        }
     })
 
     const ideas=await req.json();
