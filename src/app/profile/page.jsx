@@ -16,7 +16,7 @@ const ProfilePage = () => {
 
   const user = session?.user
 
-   console.log("user",user)
+  //  console.log("user",user)
   //  if(!user){
   //     redirect('/login')
   //  }

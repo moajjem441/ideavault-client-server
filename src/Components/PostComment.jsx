@@ -12,7 +12,7 @@ const PostComment = ({IdeaDetailsData,user}) => {
     const ideaId=IdeaDetailsData?._id
     const ideaTitle=IdeaDetailsData?.title
 
-    console.log("user",user)
+    // console.log("user",user)
 const handleSubmit =async(e)=>{
     e.preventDefault()
     
