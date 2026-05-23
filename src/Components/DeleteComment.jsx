@@ -5,6 +5,7 @@ import { AiTwotoneDelete } from "react-icons/ai";
 
 
 const DeleteComment = ({commentId}) => {
+  
     const handleDeleteButton=async(e)=>{
         console.log("commentID",commentId)
 
