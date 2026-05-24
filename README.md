@@ -1,7 +1,7 @@
 # IdeaVault – Startup Idea Sharing Platform
 
 ## 🌐 Live Website
-https://your-live-site-url.com
+[https://your-live-site-url.com](https://ideavault-tau-gray.vercel.app/)
 
 ## 📌 Project Overview
 IdeaVault is a modern platform where users can share startup ideas, explore innovations, and interact with other creators.
