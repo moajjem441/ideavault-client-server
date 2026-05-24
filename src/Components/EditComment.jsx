@@ -34,29 +34,38 @@ const EditComment = ({commentText,commentId}) => {
       
         <div>
             
+{/* className="w-full sm:w-100" */}
 
+<form onSubmit={handleEditComment} className="flex flex-col gap-3">
+  <div className="flex flex-col sm:flex-row gap-2 sm:gap-1 items-stretch sm:items-center p-2 sm:p-0">
 
-<form onSubmit={handleEditComment} className="flex flex-col gap-3 ">
-      <div className="flex flex-row gap-2 items-center">
-        <label htmlFor="editComment" className="font-bold text-sm text-default-700">
-         <AiOutlineEdit />
-       </label>
-        <Input
-    className="border-1"
-    id="editComment"
-    name="commentText"
-    defaultValue={commentText}
-    variant="bordered"
-    radius="lg"
-    
-  />
-        <Button type="submit" variant="outline" className="text-2xl">
-       <MdFileDownloadDone />
-      </Button>
-      
-      </div>
-       
-    </form>
+    <label
+      htmlFor="editComment"
+      className="font-bold text-sm text-default-700 flex items-center justify-center sm:justify-start"
+    >
+      <AiOutlineEdit className="text-lg sm:text-base" />
+    </label>
+
+    <Input
+      className="border-1 w-full sm:w-[60%]"
+      id="editComment"
+      name="commentText"
+      defaultValue={commentText}
+      variant="bordered"
+      radius="lg"
+      size="sm"
+    />
+
+    <Button
+      type="submit"
+      variant="outline"
+      className="w-full sm:w-auto px-4 py-2 text-base sm:text-2xl flex items-center justify-center"
+    >
+      <MdFileDownloadDone />
+    </Button>
+
+  </div>
+</form>
 
 
 

@@ -1,62 +1,66 @@
 'use client'
-import {Button, Form, Input} from "@heroui/react";
+import { Button, Form, Input } from "@heroui/react";
 import toast from "react-hot-toast";
 
 import { IoIosSend } from "react-icons/io";
 
-const PostComment = ({IdeaDetailsData,user}) => {
+const PostComment = ({ IdeaDetailsData, user }) => {
 
-    const userId=user?.id
-    const userName=user?.name
-    const userImage=user?.image
-    const ideaId=IdeaDetailsData?._id
-    const ideaTitle=IdeaDetailsData?.title
+    const userId = user?.id
+    const userName = user?.name
+    const userImage = user?.image
+    const ideaId = IdeaDetailsData?._id
+    const ideaTitle = IdeaDetailsData?.title
 
     // console.log("user",user)
-const handleSubmit =async(e)=>{
-    e.preventDefault()
-    
-    const formData = new FormData(e.currentTarget);
-    const commentText=formData.get("commentText")
+    const handleSubmit = async (e) => {
+        e.preventDefault()
 
-    const commentData = {
-        ideaId,userId,userName,userImage,ideaTitle,
-        commentText,
-        createdAt : new Date().toISOString(),
-               
-    };
+        const formData = new FormData(e.currentTarget);
+        const commentText = formData.get("commentText")
 
-    try{
-        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/add-comment`,{
-            method:"POST",
-            headers:{
-                'content-type':"application/json"
-            },
-            body:JSON.stringify(commentData)
-        })
+        const commentData = {
+            ideaId, userId, userName, userImage, ideaTitle,
+            commentText,
+            createdAt: new Date().toISOString(),
 
-        console.log("post res",res)
-        if(res.ok){
+        };
+
+        try {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/add-comment`, {
+                method: "POST",
+                headers: {
+                    'content-type': "application/json"
+                },
+                body: JSON.stringify(commentData)
+            })
+
+            console.log("post res", res)
+            if (res.ok) {
                 // alert("Comment posted successfully");
                 toast.success("Comment posted successfully")
                 e.target.reset()
-               
-            }
-    }catch(error){
-        alert("Error occur")
-    }
-}
 
-    
+            }
+        } catch (error) {
+            alert("Error occur")
+        }
+    }
+
+
     return (
         <div className="border w-full rounded-2xl m-2 flex items-center justify-between p-2">
-           <Form onSubmit={handleSubmit}>
-              <Input name="commentText" aria-label="Comment" className="w-100" placeholder="Write your thoughts" />
-             <Button className="ml-5" type="submit"><IoIosSend /></Button>
-           </Form>
+            <Form onSubmit={handleSubmit}>
+                <Input
+                    name="commentText"
+                    aria-label="Comment"
+                    className="w-full sm:w-100"
+                    placeholder="Write your thoughts"
+                />             <Button className="ml-5 m-2" type="submit"><IoIosSend /></Button>
+            </Form>
         </div>
     );
-    
+
 };
 
 export default PostComment;
