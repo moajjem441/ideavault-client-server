@@ -9,7 +9,7 @@ import DeleteMyIdea from './DeleteMyIdea';
 const MyIdeasCard = ({ idea }) => {
     // console.log(idea)
 
-    const { _id, title, shortDescription, category, imageUrl } = idea;
+    const { _id, title, shortDescription, category, imageUrl, createdAt } = idea;
 
     return (
 
@@ -31,31 +31,36 @@ const MyIdeasCard = ({ idea }) => {
                         <Card.Description className="text-[1rem] p-2 line-clamp-3">
                             {shortDescription}
                         </Card.Description>
-                        
+
                     </Card.Header>
                     <Card.Footer className="mt-auto flex w-full flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
                         <div className="flex flex-col">
-                            <span className="text-sm font-medium text-foreground">Only 10 spots</span>
-                            <span className="text-xs text-muted">Submission ends Oct 10.</span>
+                            <span className="text-xs text-muted">
+                                Submitted on: {new Date(createdAt).toLocaleDateString('en-US', {
+                                    month: 'short',
+                                    day: 'numeric',
+                                    year: 'numeric'
+                                })}
+                            </span>
                         </div>
 
-          
-           <Link href={`/edit-my-idea/${_id}`}>
-      <Button variant="secondary" className="w-full sm:w-auto">
-        Edit
-      </Button>
-    </Link> 
 
-    {/* <EditMyIdea key={idea._id} idea={idea}>
+                        <Link href={`/edit-my-idea/${_id}`}>
+                            <Button variant="secondary" className="w-full sm:w-auto">
+                                Edit
+                            </Button>
+                        </Link>
+
+                        {/* <EditMyIdea key={idea._id} idea={idea}>
         <Button variant="secondary" className="w-full sm:w-auto">
         Edit
       </Button>
     </EditMyIdea> */}
 
-  
-    <DeleteMyIdea key={_id} idea={idea}>
-        
-    </DeleteMyIdea>
+
+                        <DeleteMyIdea key={_id} idea={idea}>
+
+                        </DeleteMyIdea>
 
 
 

@@ -7,7 +7,7 @@ import Link from 'next/link';
 const IdeasCard = ({ idea }) => {
     // console.log(idea)
 
-    const { _id, title, shortDescription, category, imageUrl } = idea;
+    const { _id, title, shortDescription, category, imageUrl ,createdAt} = idea;
 
     return (
 
@@ -33,8 +33,9 @@ const IdeasCard = ({ idea }) => {
                     </Card.Header>
                     <Card.Footer className="mt-auto flex w-full flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
                         <div className="flex flex-col">
-                            <span className="text-sm font-medium text-foreground">Only 10 spots</span>
-                            <span className="text-xs text-muted">Submission ends Oct 10.</span>
+                            <span className="text-xs text-muted">
+                               Submitted on: {new Date(createdAt).toLocaleDateString()}
+                                </span>
                         </div>
                         <Link href={`/trending_ideas/${_id}`}> <Button className="w-full sm:w-auto">View Details</Button></Link>
                     </Card.Footer>

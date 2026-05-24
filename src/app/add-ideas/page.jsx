@@ -7,8 +7,8 @@ import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 
 export default function AddIdea() {
-const router = useRouter()
-  
+    const router = useRouter()
+
 
 
     const handleSubmit = async (e) => {
@@ -24,16 +24,24 @@ const router = useRouter()
             data.tags = data.tags.split(',').map(tag => tag.trim())
         }
 
-        if(data.category){
-            data.category=data.category.split(',').map(category=>category.trim())
+        if (data.category) {
+            data.category = data.category.split(',').map(category => category.trim())
         }
 
+
+        if (data.date) {
+        data.createdAt = new Date(data.date).toISOString(); 
+    } else {
+        
+        data.createdAt = new Date().toISOString();
+    }
+    delete data.date;
 
 
 
         //------get token-------
 
-const {data:tokenData}=await authClient.token();
+        const { data: tokenData } = await authClient.token();
 
 
 
@@ -41,7 +49,7 @@ const {data:tokenData}=await authClient.token();
             method: "POST",
             headers: {
                 'content-type': "application/json",
-                authorization:`Bearer ${tokenData?.token}`
+                authorization: `Bearer ${tokenData?.token}`
             },
             body: JSON.stringify(data)
 
@@ -233,9 +241,11 @@ const {data:tokenData}=await authClient.token();
                             <h4 className="text-xs font-bold text-green-600 uppercase tracking-wider flex items-center gap-2">
                                 <FaCalendarAlt /> Date
                             </h4>
+
                             <input
                                 type="date"
                                 name="date"
+                                defaultValue={new Date().toISOString().split('T')[0]}
                                 className="w-full bg-transparent text-default-600 text-sm font-semibold border-b border-indigo-200 focus:border-indigo-500 outline-none py-1 uppercase"
                             />
                         </div>
@@ -250,9 +260,8 @@ const {data:tokenData}=await authClient.token();
                         <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 pt-2">
                             <div className="text-xs text-default-400 font-medium flex items-center gap-2">
                                 <FaCalendarAlt />
-                                <span>Ready to publish in May 2026</span>
+                                <span>Ready to publish in {new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' })}</span>
                             </div>
-
                             <Button
                                 type="submit"
                                 color="primary"
