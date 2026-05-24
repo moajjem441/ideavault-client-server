@@ -18,7 +18,7 @@ const EditMyIdea = ({ idea }) => {
     const data = Object.fromEntries(formData.entries());
 
     const res = await fetch(
-      `${process.env.SERVER_URI}/my-ideas/${email}/${_id}`,
+      `${process.env.NEXT_PUBLIC_SERVER_URI}/my-ideas/${email}/${_id}`,
       {
         method: "PATCH",
         headers: {

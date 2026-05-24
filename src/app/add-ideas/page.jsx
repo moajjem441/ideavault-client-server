@@ -37,7 +37,7 @@ const {data:tokenData}=await authClient.token();
 
 
 
-        const req = await fetch(`${process.env.SERVER_URI}/trendingIdea`, {
+        const req = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/trendingIdea`, {
             method: "POST",
             headers: {
                 'content-type': "application/json",

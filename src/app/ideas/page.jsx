@@ -16,18 +16,19 @@ const IdeasPage = async ({searchParams}) => {
     if (endDate) params.append("endDate", endDate);
 
     //--------get token-------
-    const token =await auth.api.getToken({
-        headers: await headers()
-    })
+    // const token =await auth.api.getToken({
+    //     headers: await headers()
+    // })
 
     // ?${params.toString()}
-   const res = await fetch(`${process.env.SERVER_URI}/ideas?${params.toString()}`, {
+   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}/ideas?${params.toString()}`, {
         cache: "no-cache",
         // headers:{
         //     authorization: `Bearer ${token}`
         // }
     });
 
+    // console.log("idea res",res)
     if (!res.ok) {
         return (
             <div className='text-red-500 text-center mt-10'>

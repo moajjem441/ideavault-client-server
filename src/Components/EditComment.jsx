@@ -17,7 +17,7 @@ const EditComment = ({commentText,commentId}) => {
   const formData = new FormData(e.currentTarget);
   const newComment = formData.get("commentText");
 
-  const req = await fetch(`${process.env.SERVER_URI}/all-comments/${commentId}`, {
+  const req = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URI}all-comments/${commentId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
