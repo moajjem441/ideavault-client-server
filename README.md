@@ -1,26 +1,30 @@
 # IdeaVault – Startup Idea Sharing Platform
 
 ## 🌐 Live Website
-[https://your-live-site-url.com](https://ideavault-tau-gray.vercel.app/)
+https://ideavault-tau-gray.vercel.app/
 
 ## 📌 Project Overview
-IdeaVault is a modern platform where users can share startup ideas, explore innovations, and interact with other creators.
+IdeaVault is a modern platform where users can share startup ideas, explore innovative projects, and interact with other creators through discussions and engagement features.
 
 ## ✨ Features
 
-- 🔐 User Authentication & Authorization
-- 💡 Users can share innovative startup ideas
-- 💬 Comment and discussion system
-- 🔍 Search and filter functionality
-- 🌗 Dark and Light mode support
-- 📱 Fully responsive design
-- ❤️ Like and interaction system
+- 🔐 User authentication and authorization system
+- 💡 Users can create and publish startup ideas
+- 💬 Comment and discussion functionality
+- 🔍 Search and filter ideas easily
+- 🌗 Dark and light theme support
+- 📱 Fully responsive design for all devices
+- ❤️ Interactive like/reaction system
 
 ## 🛠️ Technologies Used
 
+### Frontend
 - Next.js
 - React.js
 - Tailwind CSS
+- Hero UI
+
+### Backend
 - Node.js
 - Express.js
 - MongoDB
@@ -28,10 +32,11 @@ IdeaVault is a modern platform where users can share startup ideas, explore inno
 ## 🚀 Run Locally
 
 ```bash
+git clone https://github.com/moajjem441/ideavault-client-site.git
+cd ideavault-client-site
 npm install
 npm run dev
 ```
 
 ## 👨‍💻 Developer
-
 Moajjem Hossain
