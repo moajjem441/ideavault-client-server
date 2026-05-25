@@ -23,6 +23,7 @@ IdeaVault is a modern platform where users can share startup ideas, explore inno
 - React.js
 - Tailwind CSS
 - Hero UI
+- Daisi UI
 
 ### Backend
 - Node.js
