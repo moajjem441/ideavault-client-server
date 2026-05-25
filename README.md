@@ -29,6 +29,7 @@ IdeaVault is a modern platform where users can share startup ideas, explore inno
 - Node.js
 - Express.js
 - MongoDB
+  
 
 ## 🚀 Run Locally
 
