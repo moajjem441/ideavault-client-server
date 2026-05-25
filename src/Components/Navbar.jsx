@@ -53,6 +53,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div >
+                        
                         <Image
                             src='/assets/logo-img.png'
                             width={100}
