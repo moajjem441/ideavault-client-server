@@ -118,17 +118,17 @@ const Footer = () => {
           <ul className="space-y-3 text-default-600 font-medium">
             <li className="flex items-center gap-2">
               <FaEnvelope className="text-primary" />
-              <a href="mailto:support@ideavault.com" className="hover:text-primary transition duration-200">
-                support@ideavault.com
+              <a href="mailto:moajjem441@gmail.com" className="hover:text-primary transition duration-200">
+                moajjem441@gmail.com
               </a>
             </li>
             <li className="flex items-center gap-2">
               <FaPhoneAlt className="text-primary" />
-              <span>+1 (555) 123-4567</span>
+              <span>+8801708372039</span>
             </li>
             <li className="flex items-center gap-2">
               <FaMapMarkerAlt className="text-primary" />
-              <span>123 Innovation St, Silicon Valley, CA</span>
+              <span>Dhaka,Bangladesh</span>
             </li>
           </ul>
         </div>
@@ -143,19 +143,19 @@ const Footer = () => {
             Follow Us
           </h3>
           <div className="flex gap-3">
-            <a href="https://x.com/ideavault" target="_blank" rel="noopener noreferrer" 
+            <a href="https://x.com/NakyNaky1078618" target="_blank" rel="noopener noreferrer" 
                className="bg-default-200 p-3 rounded-full text-default-700 hover:bg-primary hover:text-white transition duration-300 shadow-sm">
               <SiX className="w-5 h-5" />
             </a>
-            <a href="https://github.com/ideavault" target="_blank" rel="noopener noreferrer"
+            <a href="https://github.com/moajjem441" target="_blank" rel="noopener noreferrer"
                className="bg-default-200 p-3 rounded-full text-default-700 hover:bg-primary hover:text-white transition duration-300 shadow-sm">
               <FaGithub className="w-5 h-5" />
             </a>
-            <a href="https://linkedin.com/company/ideavault" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/in/moajjem-hossain-" target="_blank" rel="noopener noreferrer"
                className="bg-default-200 p-3 rounded-full text-default-700 hover:bg-primary hover:text-white transition duration-300 shadow-sm">
               <FaLinkedin className="w-5 h-5" />
             </a>
-            <a href="https://facebook.com/ideavault" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.facebook.com/mdmoajjemhossain.naky" target="_blank" rel="noopener noreferrer"
                className="bg-default-200 p-3 rounded-full text-default-700 hover:bg-primary hover:text-white transition duration-300 shadow-sm">
               <FaFacebook className="w-5 h-5" />
             </a>
